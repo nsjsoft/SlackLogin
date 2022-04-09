@@ -44,6 +44,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nextButton.isEnabled = false
+        
         var token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
             if let frameValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                let keyboardFrame = frameValue.cgRectValue
@@ -103,6 +105,8 @@ extension ViewController: UITextFieldDelegate {
         } else {
             palceholderLabel.text = ".slack.com"
         }
+        
+        nextButton.isEnabled = finalText.length > 0
         
         return true
         

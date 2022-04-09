@@ -23,21 +23,64 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var placeholderLeadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var nextButton: UIButton!
+    
+    var tokens = [NSObjectProtocol]()
+    
+    deinit {
+        tokens.forEach{
+            NotificationCenter.default.removeObserver($0)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        urlField.becomeFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        var token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+            if let frameValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+               let keyboardFrame = frameValue.cgRectValue
+               self?.bottomConstraint.constant = keyboardFrame.size.height
+               UIView.animate(withDuration: 0.3, animations: {
+                   self?.view.layoutIfNeeded()
+               }) { finished in
+                   UIView.setAnimationsEnabled(true)
+               }
+            }
+        }
+        
+        tokens.append(token)
+        
+        token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil
+                                                       , queue: OperationQueue.main, using: { [weak self] (noti) in
+            self?.bottomConstraint.constant = 0
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self?.view.layoutIfNeeded()
+            })
+        })
+        
+        tokens.append(token)
+        
     }
 
 }
 
 extension ViewController: UITextFieldDelegate {
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.setAnimationsEnabled(false)
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        
-        
+    
         if string.count > 0 {
             guard string.rangeOfCharacter(from: charSet) == nil else {
                 return false

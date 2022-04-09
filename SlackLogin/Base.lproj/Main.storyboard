@@ -16,14 +16,91 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCA-tm-42b">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5el-VH-7Mq">
+                                        <rect key="frame" x="354" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="SeT-Gs-Vys"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5el-VH-7Mq" secondAttribute="trailing" id="Aad-Z7-CM2"/>
+                                    <constraint firstItem="5el-VH-7Mq" firstAttribute="top" secondItem="TCA-tm-42b" secondAttribute="top" id="HDE-yk-gUg"/>
+                                    <constraint firstAttribute="height" constant="60" id="bq2-Fo-XJd"/>
+                                    <constraint firstAttribute="bottom" secondItem="5el-VH-7Mq" secondAttribute="bottom" id="c0S-3F-uuz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3l-67-gSl">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't Know your workspace URL?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAt-bh-RTZ">
+                                        <rect key="frame" x="20" y="727" width="374" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="workspace-url.slacl.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGu-wA-lbg">
+                                        <rect key="frame" x="20" y="369" width="374" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tUG-hQ-uEH">
+                                        <rect key="frame" x="20" y="359" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Isw-W9-KSa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="go"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Slack workspace URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-hd-kNQ">
+                                        <rect key="frame" x="20" y="338" width="217" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="cGu-wA-lbg" firstAttribute="centerY" secondItem="tUG-hQ-uEH" secondAttribute="centerY" id="1E4-5F-HsO"/>
+                                    <constraint firstItem="YAt-bh-RTZ" firstAttribute="leading" secondItem="m3l-67-gSl" secondAttribute="leading" constant="20" id="6DQ-Yp-Tao"/>
+                                    <constraint firstItem="3c9-hd-kNQ" firstAttribute="leading" secondItem="tUG-hQ-uEH" secondAttribute="leading" id="8NM-NR-Nk8"/>
+                                    <constraint firstItem="cGu-wA-lbg" firstAttribute="leading" secondItem="tUG-hQ-uEH" secondAttribute="leading" id="DyH-zw-RXy"/>
+                                    <constraint firstAttribute="trailing" secondItem="YAt-bh-RTZ" secondAttribute="trailing" constant="20" id="HZs-7d-yAV"/>
+                                    <constraint firstItem="cGu-wA-lbg" firstAttribute="trailing" secondItem="tUG-hQ-uEH" secondAttribute="trailing" id="Hb7-5A-J76"/>
+                                    <constraint firstAttribute="trailing" secondItem="tUG-hQ-uEH" secondAttribute="trailing" constant="20" id="O29-Jz-dvU"/>
+                                    <constraint firstItem="tUG-hQ-uEH" firstAttribute="leading" secondItem="m3l-67-gSl" secondAttribute="leading" constant="20" id="VDJ-na-KW3"/>
+                                    <constraint firstItem="tUG-hQ-uEH" firstAttribute="centerY" secondItem="m3l-67-gSl" secondAttribute="centerY" id="d3c-iU-RbS"/>
+                                    <constraint firstItem="tUG-hQ-uEH" firstAttribute="top" secondItem="3c9-hd-kNQ" secondAttribute="bottom" id="dRG-ZV-CSX"/>
+                                    <constraint firstAttribute="bottom" secondItem="YAt-bh-RTZ" secondAttribute="bottom" constant="10" id="n3A-KF-szD"/>
+                                    <constraint firstItem="cGu-wA-lbg" firstAttribute="height" secondItem="tUG-hQ-uEH" secondAttribute="height" multiplier="0.5" id="odx-D7-pbi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TCA-tm-42b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="04F-Yd-13Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m3l-67-gSl" secondAttribute="bottom" id="7gd-JT-UTb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m3l-67-gSl" secondAttribute="trailing" id="DBx-Q6-WgQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TCA-tm-42b" secondAttribute="trailing" id="GmE-hb-Jqf"/>
+                            <constraint firstItem="TCA-tm-42b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KP5-FV-iDK"/>
+                            <constraint firstItem="m3l-67-gSl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pjy-KV-IBz"/>
+                            <constraint firstItem="m3l-67-gSl" firstAttribute="top" secondItem="TCA-tm-42b" secondAttribute="bottom" id="r1H-jv-c74"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ANb-eq-zOO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-229" y="68"/>
+            <point key="canvasLocation" x="-591" y="-185"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oQW-bG-AnL">
@@ -44,7 +121,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Jz-C7-Qtm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-958" y="68"/>
+            <point key="canvasLocation" x="-1106" y="28"/>
         </scene>
     </scenes>
     <resources>

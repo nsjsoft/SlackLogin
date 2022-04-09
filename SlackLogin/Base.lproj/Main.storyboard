@@ -59,6 +59,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="go"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="vQb-Gb-txZ"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Slack workspace URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-hd-kNQ">
                                         <rect key="frame" x="20" y="338" width="217" height="21"/>
@@ -97,10 +100,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ANb-eq-zOO"/>
+                    <connections>
+                        <outlet property="nextButton" destination="5el-VH-7Mq" id="pAZ-s9-efh"/>
+                        <outlet property="palceholderLabel" destination="cGu-wA-lbg" id="vNz-dn-ZN0"/>
+                        <outlet property="placeholderLeadingConstraint" destination="DyH-zw-RXy" id="cGo-uD-K0S"/>
+                        <outlet property="urlField" destination="tUG-hQ-uEH" id="tsV-r9-wzm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-591" y="-185"/>
+            <point key="canvasLocation" x="228" y="-303"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oQW-bG-AnL">

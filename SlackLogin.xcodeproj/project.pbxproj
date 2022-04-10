@@ -12,6 +12,7 @@
 		DC0236492801502D00CE966B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0236472801502D00CE966B /* Main.storyboard */; };
 		DC02364B2801502F00CE966B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC02364A2801502F00CE966B /* Assets.xcassets */; };
 		DC02364E2801502F00CE966B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC02364C2801502F00CE966B /* LaunchScreen.storyboard */; };
+		DC023687280299B000CE966B /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC023686280299B000CE966B /* EmailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		DC02364D2801502F00CE966B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC02364F2801502F00CE966B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC0236632801509200CE966B /* SlackLogin copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SlackLogin copy-Info.plist"; path = "/Users/metanet/Desktop/SwiftDev/SlackLogin/SlackLogin copy-Info.plist"; sourceTree = "<absolute>"; };
+		DC023686280299B000CE966B /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				DC0236412801502D00CE966B /* AppDelegate.swift */,
 				DC0236452801502D00CE966B /* ViewController.swift */,
+				DC023686280299B000CE966B /* EmailViewController.swift */,
 				DC0236472801502D00CE966B /* Main.storyboard */,
 				DC02364A2801502F00CE966B /* Assets.xcassets */,
 				DC02364C2801502F00CE966B /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0236462801502D00CE966B /* ViewController.swift in Sources */,
+				DC023687280299B000CE966B /* EmailViewController.swift in Sources */,
 				DC0236422801502D00CE966B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

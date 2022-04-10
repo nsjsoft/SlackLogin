@@ -30,21 +30,20 @@ class ViewController: UIViewController {
     var tokens = [NSObjectProtocol]()
     
     deinit {
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
         tokens.forEach{
             NotificationCenter.default.removeObserver($0)
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        urlField.becomeFirstResponder()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        nextButton.isEnabled = false
         
         var token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
             if let frameValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
@@ -71,7 +70,24 @@ class ViewController: UIViewController {
         
         tokens.append(token)
         
+        urlField.becomeFirstResponder()
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? EmailViewController {
+            vc.bottomMargin = bottomConstraint.constant
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        nextButton.isEnabled = false
+        
+    }
+    
+    var presented = false
 
 }
 
@@ -89,7 +105,11 @@ extension ViewController: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        UIView.setAnimationsEnabled(false)
+        if !presented {
+            UIView.setAnimationsEnabled(false)
+            presented = true
+        }
+        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

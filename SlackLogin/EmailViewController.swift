@@ -24,7 +24,10 @@ class EmailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        titleLabel.alpha = 0.0
+        
+        titleLabelBottomConstraint.constant = 20
+        
     }
     
 
@@ -38,4 +41,30 @@ class EmailViewController: UIViewController {
     }
     */
 
+}
+
+extension EmailViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        palceholderLabel.alpha = (textField.text ?? "").count > 0 ? 0.0 : 1.0
+        
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let finalText = NSMutableString(string: textField.text ?? "")
+        finalText.replaceCharacters(in: range, with: string)
+        
+        palceholderLabel.alpha = finalText.length > 0 ? 0.0 : 1.0
+        
+        UIView.animate(withDuration: 0.3) {
+            [weak self] in
+            self?.titleLabel.alpha = finalText.length > 0 ? 1.0 : 0.0
+            self?.titleLabelBottomConstraint.constant = finalText.length > 0 ? 0 : -20
+            self?.view.layoutIfNeeded()
+        }
+        
+        return true
+    }
 }

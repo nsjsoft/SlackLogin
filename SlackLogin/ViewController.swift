@@ -105,6 +105,7 @@ extension ViewController: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
         if !presented {
             UIView.setAnimationsEnabled(false)
             presented = true
